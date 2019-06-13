@@ -1,0 +1,4 @@
+Ajouter un ajustement de la luminosite des matrices à led
+Soit la fixer plus basse tout le temps => très facile
+Soit l'ajuster en fonction de la plage horaire => facile
+Soit l'ajuster en fonction de la luminosité => moyen car ajout d'un capteur de luminosité plus modification du fichier 3D
