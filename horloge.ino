@@ -5,7 +5,7 @@
     Created:	26/05/2019 11:14:17
     Author:     DESKTOP-MNVU0P6\David-Fixe
 	Remarque : Changer la façon d'analyser les messages de la com web
-
+			 : Gérer la luminosite de l'affichage en fonction de l'heure
 
 
 */
@@ -126,7 +126,7 @@ void loop()
 	String strHeure = Heure_str(timeClient.getHours(), timeClient.getMinutes(), timeClient.getSeconds(), ete);
 	//String reception = Communication_web();
 	
-
+	Luminosite(timeClient.getHours());
 	AffichageHeure(strHeure);
 
 	switch (decode(Communication_web())) {
@@ -209,6 +209,24 @@ int decode(String reception) {
 			}
 
 		}
+	}
+
+}
+
+
+int Luminosite(int heure) {
+	//Fonction pour gérer la luminosité de l'affichage en fonction de l'heure
+
+	if (heure > 8 && heure < 19)
+	{
+		P.setIntensity(7);
+		return 0;
+	}
+
+	else
+	{
+		P.setIntensity(1);
+		return 1;
 	}
 
 }
